@@ -11,7 +11,7 @@ try {
     $age = $_POST['age'];
 
     $sql = "INSERT INTO user VALUES (id, name, age)";
-    $stmt = $dsn->prepare($sql);
+    $stmt = $dbh->prepare($sql);
     $params = array('id' => $id, 'name' => $name, 'age' => $age);
 
     $result = $dbh->query($sql);
@@ -21,7 +21,7 @@ try {
     echo "接続成功\n";
 } catch (PDOException $e) {
     //echo "接続失敗: " . $e->getMessage() . "\n";
-    header('location: index.php?flg-1->getMessage()');
+    header('location: index.php?flg-0' . $e->getMessage());
     exit();
 }
 ?>
