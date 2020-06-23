@@ -10,7 +10,7 @@ try {
     $name = $_POST['name'];
     $age = $_POST['age'];
 
-    $sql = "INSERT INTO user VALUES (id, name, age)";
+    $sql = "INSERT INTO user VALUES (:id, :name, :age)";
     $stmt = $dbh->prepare($sql);
     $params = array('id' => $id, 'name' => $name, 'age' => $age);
     $stmt ->execute($params);
