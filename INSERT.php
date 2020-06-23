@@ -13,8 +13,7 @@ try {
     $sql = "INSERT INTO user VALUES (id, name, age)";
     $stmt = $dbh->prepare($sql);
     $params = array('id' => $id, 'name' => $name, 'age' => $age);
-
-    $result = $dbh->query($sql);
+    $stmt ->execute($params);
 
     header('location: index.php?flg-1');
 
