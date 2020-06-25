@@ -130,7 +130,7 @@ try {
                 </div>
               </div>
 
-            <button type="submit" class="btn btn-info">INSERT</button>
+            <button type="submit" class="btn btn-info">UPDATE</button>
 
           </form>
         </div>
