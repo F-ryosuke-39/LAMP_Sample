@@ -155,32 +155,32 @@ try {
           </form>
         </div>
         <div id="tab4" class="tab-pane">
-        <table class="table table-hover mt-2">
-          <thead class="thead-dark">
-              <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>-</th>
-              </tr>
-          </thead>
+          <table class="table table-hover mt-2">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>-</th>
+                </tr>
+            </thead>
 
-          <tbody>
-              <?php foreach ($del_list as $value) { ?>
-                  <tr>
-                      <th><?php echo "$value[id]" ?></th>
-                      <td><?php echo "$value[name]" ?></td>
-                      <td><?php echo "$value[age]" ?></td>
-                      <td>
-                          <form action="./delete.php" method="$_GET">
-                              <input type="text" class="d-none" name="id" value="<?php echo "$value[id]" ?>">
-                              <button type="submit" class="btn btn-danger">DELETE</button>
-                          </form>
-                      </td>
-                  </tr>
-              <?php } ?>
-          </tbody>
-          </table>
+            <tbody>
+                <?php foreach ($del_list as $value) { ?>
+                    <tr>
+                        <th><?php echo "$value[id]" ?></th>
+                        <td><?php echo "$value[name]" ?></td>
+                        <td><?php echo "$value[age]" ?></td>
+                        <td>
+                            <form action="./DELETE.php" method="$_GET">
+                                <input type="text" class="d-none" name="id" value="<?php echo "$value[id]" ?>">
+                                <button type="submit" class="btn btn-danger">DELETE</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+            </table>
         </div>
       </div>
     </div>
