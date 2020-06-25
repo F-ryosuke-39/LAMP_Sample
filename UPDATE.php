@@ -10,7 +10,7 @@ try {
     $name = $_POST['name'];
     $age = $_POST['age'];
 
-    $sql = "UPDATE user SET name = :name, age = :age, where id = :id";
+    $sql = "UPDATE FROM user SET name = :name, age = :age, where id = :id";
     $stmt = $dbh->prepare($sql);
     $params = array('id' => $id, 'name' => $name, 'age' => $age);
     $stmt ->execute($params);
