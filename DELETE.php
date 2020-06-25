@@ -18,7 +18,7 @@ try {
     echo "接続成功\n";
 } catch (PDOException $e) {
     //echo "接続失敗: " . $e->getMessage() . "\n";
-    header('location: index.php?flg-0' . $e->getMessage());
+    header('location: index.php?flg-2' . $e->getMessage());
     exit();
 }
 ?>
