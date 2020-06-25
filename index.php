@@ -48,9 +48,19 @@ try {
 
     <div class="container">
       <?php if($_GET["fg"] == 1){ ?>
-        <p>success</p>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Processing is complete . <strong>Success!!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
       <?php } else if($_GET["fg"] == 2){ ?>
-        <p>failed</p>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                Processing is complete . <strong>Failed!!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
       <?php } ?>
     </div>
 
@@ -145,31 +155,31 @@ try {
           </form>
         </div>
         <div id="tab4" class="tab-pane">
-          <table class="table table-striped table-second mt-2">
-            <thead class="thead-dark">
+        <table class="table table-hover mt-2">
+          <thead class="thead-dark">
               <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>age</th>
-                <th>--</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>-</th>
               </tr>
-            </thead>
+          </thead>
 
-            <tbody>
-                <?php foreach($del_list as $value){ ?>
-                    <tr>
-                        <th><?php echo "$value[id]" ?></th>
-                        <td><?php echo "$value[name]" ?></td>
-                        <td><?php echo "$value[age]" ?></td>
-                        <td>
-                          <form action="./DELETE.php" method="$_GET">
-                            <input type="text" class="d_none" name="id" value="<?php echo "$value[id]"?>">
-                            <button type="submit" class="btn btn-denger">DELETE</button>
+          <tbody>
+              <?php foreach ($del_list as $value) { ?>
+                  <tr>
+                      <th><?php echo "$value[id]" ?></th>
+                      <td><?php echo "$value[name]" ?></td>
+                      <td><?php echo "$value[age]" ?></td>
+                      <td>
+                          <form action="./delete.php" method="$_GET">
+                              <input type="text" class="d-none" name="id" value="<?php echo "$value[id]" ?>">
+                              <button type="submit" class="btn btn-danger">DELETE</button>
                           </form>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
+                      </td>
+                  </tr>
+              <?php } ?>
+          </tbody>
           </table>
         </div>
       </div>
