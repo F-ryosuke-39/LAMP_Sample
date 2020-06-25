@@ -8,7 +8,7 @@ try {
 
     $id = $_SET["id"];
 
-    $sql = "DELETE user where id = id";
+    $sql = "DELETE user where id = :id";
     $stmt = $dbh->prepare($sql);
     $params = array('id' => $id);
     $stmt ->execute($params);
