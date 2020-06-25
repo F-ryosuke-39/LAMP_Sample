@@ -10,17 +10,16 @@ try {
     $name = $_POST['name'];
     $age = $_POST['age'];
 
-    $sql = "UPDATE FROM user SET name = :name, age = :age, where id = :id";
+
+    $sql = "UPDATE user SET name=:name, age=:age  where id = :id"; 
     $stmt = $dbh->prepare($sql);
-    $params = array('id' => $id, 'name' => $name, 'age' => $age);
-    $stmt ->execute($params);
+    $params = array(':id' => $id, ':name' => $name, ':age' => $age);
+    $stmt->execute($params);
 
-    header('location: index.php?flg-1');
-
-    echo "接続成功\n";
+    header('Location: index.php?fg=1');
+    
 } catch (PDOException $e) {
-    //echo "接続失敗: " . $e->getMessage() . "\n";
-    header('location: index.php?flg-2' . $e->getMessage());
+    header('Location: index.php?fg=2?err='. $e->getMessage());
     exit();
 }
 ?>
